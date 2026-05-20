@@ -20,6 +20,7 @@ import dashboard from "@/assets/dashboard-mockup.jpg";
 import exportImg from "@/assets/export-logistics.jpg";
 import security from "@/assets/security-audit.jpg";
 import smartFarm from "@/assets/smart-farming.jpg";
+import farmTourism from "@/assets/farm-tourism.jpg";
 
 import { Navbar } from "@/components/Navbar";
 import { Logo } from "@/components/Logo";
@@ -390,6 +391,7 @@ function RevenueStreams() {
           <RevCropSales />
           <RevAppreciation />
           <RevExport />
+          <RevFarmTourism />
           <RevMarketplace />
           <RevManagement />
         </div>
@@ -532,12 +534,42 @@ function RevExport() {
   );
 }
 
+function RevFarmTourism() {
+  const features = [
+    { icon: Building2, label: "Luxury Farm Stays" },
+    { icon: Leaf, label: "Organic Tourism" },
+    { icon: Users, label: "Experience Farming" },
+    { icon: MapPin, label: "Horse Riding" },
+    { icon: Sprout, label: "Vineyard Style" },
+  ];
+  return (
+    <RevCard idx="05" kicker="Revenue Stream" title="Agro Tourism — Luxury Farm Stay">
+      <div className="rounded-2xl overflow-hidden border border-emerald-700/50">
+        <img src={farmTourism} alt="Luxury farm stay and agro tourism in Georgia" loading="lazy" width={1280} height={720} className="w-full h-40 object-cover"/>
+      </div>
+      <div className="mt-4 grid grid-cols-2 gap-2">
+        {features.map((f) => (
+          <div key={f.label} className="flex items-center gap-2 rounded-lg bg-emerald-500/15 border border-emerald-500/30 px-3 py-2 text-xs font-semibold">
+            <f.icon className="h-3.5 w-3.5 text-emerald-300"/>
+            {f.label}
+          </div>
+        ))}
+      </div>
+      <div className="mt-4 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 p-4">
+        <div className="text-xs uppercase tracking-wider text-emerald-300">Estimated Recurring</div>
+        <div className="text-2xl font-bold mt-1">$150K – $400K / year</div>
+      </div>
+      <p className="mt-3 text-sm text-emerald-100/70">Additional recurring income from eco-tourism, farm experiences and vineyard-style hospitality.</p>
+    </RevCard>
+  );
+}
+
 function RevMarketplace() {
   const data = Array.from({length:14}).map((_,i)=>({
     t:i, p: 10 + Math.sin(i/2)*1.2 + i*0.18,
   }));
   return (
-    <RevCard idx="05" kicker="Revenue Stream" title="Marketplace Fees">
+    <RevCard idx="06" kicker="Revenue Stream" title="Marketplace Fees">
       <div className="rounded-2xl border border-emerald-700/40 bg-emerald-950/60 p-4">
         <div className="flex justify-between text-xs text-emerald-200">
           <div>ALM/USDT</div><div className="text-emerald-300">+5.4%</div>
@@ -569,7 +601,7 @@ function RevManagement() {
     "Compliance & reporting",
   ];
   return (
-    <RevCard idx="06" kicker="Revenue Stream" title="Farm Management Fees">
+    <RevCard idx="07" kicker="Revenue Stream" title="Farm Management Fees">
       <ul className="space-y-2 text-sm">
         {items.map(i=>(<Li key={i}>{i}</Li>))}
       </ul>
