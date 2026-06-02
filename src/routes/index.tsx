@@ -975,7 +975,7 @@ function Index() {
         <WhyInvestors />
         <Features />
         <Security />
-        <Pricing />
+        
         <Future />
         <Recurring />
         <FinalCTA />
