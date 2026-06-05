@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 
 const links = [
-  { href: "#problem", label: "Problem" },
-  { href: "#solution", label: "Solution" },
-  { href: "#model", label: "Model" },
-  { href: "#revenue", label: "Revenue" },
-  { href: "#features", label: "Platform" },
-  { href: "#security", label: "Security" },
-  
+  { href: "/#projects", label: "Projects" },
+  { href: "/#problem", label: "Problem" },
+  { href: "/#solution", label: "Solution" },
+  { href: "/#model", label: "Model" },
+  { href: "/#revenue", label: "Revenue" },
+  { href: "/#features", label: "Platform" },
+  { href: "/#security", label: "Security" },
 ];
 
 export function Navbar() {

@@ -25,6 +25,7 @@ import farmTourism from "@/assets/farm-tourism.jpg";
 import { Navbar } from "@/components/Navbar";
 import { Logo } from "@/components/Logo";
 import { Reveal, Counter } from "@/components/Reveal";
+import { FeaturedProjects } from "@/components/FeaturedProjects";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -968,6 +969,7 @@ function Index() {
       <Navbar />
       <main>
         <Hero />
+        <FeaturedProjects />
         <Problem />
         <Solution />
         <BusinessModel />
