@@ -1,11 +1,26 @@
 import heroAlmond from "@/assets/hero-almond-farm.jpg";
-import pista from "@/assets/pista-farm.jpg";
+import almondDrone from "@/assets/almond-drone.jpg";
+import almondBlossom from "@/assets/almond-blossom.jpg";
+import almondResort from "@/assets/almond-resort.jpg";
+import almondMasterplan from "@/assets/almond-masterplan.jpg";
+import almondExperience from "@/assets/almond-future-experience.jpg";
+import almondWellness from "@/assets/almond-future-wellness.jpg";
+
+import pistaFarm from "@/assets/pista-farm.jpg";
+import oliveDrone from "@/assets/olive-drone.jpg";
+import pistachioHarvest from "@/assets/pistachio-harvest.jpg";
+import oliveMill from "@/assets/olive-mill.jpg";
+import oliveMasterplan from "@/assets/olive-masterplan.jpg";
+import oliveWedding from "@/assets/olive-future-wedding.jpg";
+import oliveCulinary from "@/assets/olive-future-culinary.jpg";
+
 import georgia from "@/assets/georgia-land.jpg";
-import smartFarm from "@/assets/smart-farming.jpg";
-import farmTourism from "@/assets/farm-tourism.jpg";
-import dashboard from "@/assets/dashboard-mockup.jpg";
-import blockchainFarm from "@/assets/blockchain-farm.jpg";
-import exportImg from "@/assets/export-logistics.jpg";
+import potatoDrone from "@/assets/potato-drone.jpg";
+import potatoHarvest from "@/assets/potato-harvest.jpg";
+import foodFactory from "@/assets/food-factory.jpg";
+import frozenPlant from "@/assets/frozen-plant.jpg";
+import tsalkaMasterplan from "@/assets/tsalka-masterplan.jpg";
+import tsalkaExport from "@/assets/tsalka-export.jpg";
 
 export type Project = {
   slug: string;
@@ -21,6 +36,7 @@ export type Project = {
   roi: string;
   cover: string;
   gallery: { src: string; label: string }[];
+  futureProjections: { src: string; title: string; caption: string }[];
   currentAssetValue: string;
   tokenSupply: string;
   expectedYield: string;
@@ -62,11 +78,17 @@ export const projects: Project[] = [
     roi: "12% – 18% Annual Target",
     cover: heroAlmond,
     gallery: [
-      { src: heroAlmond, label: "Drone Farm View" },
-      { src: smartFarm, label: "Crop Plantation" },
-      { src: farmTourism, label: "Future Resort Concept" },
-      { src: georgia, label: "Future Tourism Concept" },
-      { src: dashboard, label: "Masterplan Visualization" },
+      { src: almondDrone, label: "Aerial Orchard View" },
+      { src: almondBlossom, label: "Almond Blossom Season" },
+      { src: almondResort, label: "Luxury Villa Concept" },
+      { src: almondMasterplan, label: "Estate Masterplan" },
+      { src: almondExperience, label: "Horse Riding Experience" },
+    ],
+    futureProjections: [
+      { src: almondResort, title: "Luxury Farm Stay Villas", caption: "Modern stone villas with infinity pools nestled inside the orchards." },
+      { src: almondExperience, title: "Horse Riding & Experience Tourism", caption: "Curated outdoor experiences across the estate trails." },
+      { src: almondWellness, title: "Wellness & Yoga Retreats", caption: "Open-air wellness platforms hosted under the almond canopy." },
+      { src: almondMasterplan, title: "Estate Masterplan", caption: "Phased rollout of villas, F&B, wellness and event spaces." },
     ],
     currentAssetValue: "$5.2M",
     tokenSupply: "5,200,000 AVE",
@@ -116,13 +138,19 @@ export const projects: Project[] = [
     ],
     projectedGrowth: "Agriculture Revenue + Tourism Revenue + Premium Product Sales",
     roi: "14% – 20% Annual Target",
-    cover: pista,
+    cover: pistaFarm,
     gallery: [
-      { src: pista, label: "Drone Farm View" },
-      { src: smartFarm, label: "Crop Plantation" },
-      { src: farmTourism, label: "Future Resort Concept" },
-      { src: georgia, label: "Future Tourism Concept" },
-      { src: dashboard, label: "Masterplan Visualization" },
+      { src: oliveDrone, label: "Olive Groves — Aerial" },
+      { src: pistachioHarvest, label: "Pistachio Harvest" },
+      { src: oliveMill, label: "Olive Oil Tasting Lounge" },
+      { src: oliveMasterplan, label: "Eco-Villa Masterplan" },
+      { src: oliveCulinary, label: "Farm-to-Table Experience" },
+    ],
+    futureProjections: [
+      { src: oliveMill, title: "Olive Oil Experience Center", caption: "Tastings, tours and signature olive oil retail in a heritage setting." },
+      { src: oliveWedding, title: "Destination Weddings", caption: "Cinematic outdoor venue among ancient olive trees." },
+      { src: oliveCulinary, title: "Culinary Tourism", caption: "Traditional Georgian dining and cooking classes under the canopy." },
+      { src: oliveMasterplan, title: "Luxury Eco Villas Masterplan", caption: "Phased rollout of villas, wellness and event venues." },
     ],
     currentAssetValue: "$6.1M",
     tokenSupply: "6,100,000 OPR",
@@ -175,11 +203,17 @@ export const projects: Project[] = [
     roi: "18% – 25% Annual Target",
     cover: georgia,
     gallery: [
-      { src: georgia, label: "Drone Farm View" },
-      { src: smartFarm, label: "Crop Plantation" },
-      { src: blockchainFarm, label: "Future Resort Concept" },
-      { src: exportImg, label: "Future Tourism Concept" },
-      { src: dashboard, label: "Masterplan Visualization" },
+      { src: potatoDrone, label: "Tsalka Highland Fields" },
+      { src: potatoHarvest, label: "Mechanized Harvest" },
+      { src: foodFactory, title: "French Fries Production", label: "French Fries Production" } as any,
+      { src: frozenPlant, label: "Frozen Food Facility" },
+      { src: tsalkaMasterplan, label: "Industrial Masterplan" },
+    ],
+    futureProjections: [
+      { src: foodFactory, title: "French Fries Manufacturing", caption: "Phase 2 — high-throughput potato processing line." },
+      { src: frozenPlant, title: "Frozen Food Plant", caption: "Phase 4 — cold-chain frozen food production facility." },
+      { src: tsalkaExport, title: "Export Logistics Hub", caption: "Phase 5 — container exports to EU and MENA markets." },
+      { src: tsalkaMasterplan, title: "Agro-Industrial Masterplan", caption: "Vertically integrated farm, factory, R&D and tourism campus." },
     ],
     currentAssetValue: "$9.4M",
     tokenSupply: "9,400,000 TAIE",
