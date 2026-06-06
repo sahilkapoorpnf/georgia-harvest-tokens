@@ -66,6 +66,7 @@ function ProjectDetail() {
         <Overview project={project} />
         <Revenue project={project} />
         <Roadmap />
+        <FutureProjections project={project} />
         <Projections project={project} />
         <TokenizationFlow />
         <WhyInvest />
@@ -328,6 +329,43 @@ function Roadmap() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- FUTURE PROJECTIONS (visual) ---------- */
+function FutureProjections({ project }: { project: ReturnType<typeof getProject> & {} }) {
+  return (
+    <section className="py-20 bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <Reveal>
+          <SectionHeader kicker="Future Projections" title="What This Estate Becomes" />
+          <p className="mt-4 max-w-2xl text-emerald-900/70">
+            Visualized concept renders of the planned developments backing this tokenized asset —
+            from luxury hospitality and experience tourism to processing facilities and export infrastructure.
+          </p>
+        </Reveal>
+
+        <div className="mt-12 grid md:grid-cols-2 gap-6">
+          {project!.futureProjections.map((fp, i) => (
+            <Reveal key={fp.title} delay={i * 0.08}>
+              <div className="group relative overflow-hidden rounded-3xl border border-emerald-100 shadow-glow aspect-[16/10]">
+                <img src={fp.src} alt={fp.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-emerald-950/40 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-400/95 text-emerald-950 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider">
+                    <Sparkles className="h-3 w-3" /> Future Vision
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <div className="text-xl sm:text-2xl font-extrabold">{fp.title}</div>
+                  <div className="mt-1.5 text-sm text-emerald-100/90 max-w-md">{fp.caption}</div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
